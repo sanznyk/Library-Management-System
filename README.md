@@ -1,38 +1,60 @@
-# Library Management System (Java Swing + MySQL)
+# 📚 Library Management System
 
-## Overview
-A simple Library Management System built with Java Swing (GUI) and MySQL (database). 
-Features:
-- Secure user authentication (simple password check)
-- Role-based access: Admin and Student
-- Manage books: add, list, delete (Admin)
-- Borrow/Return books (Student)
-- JDBC-based database connectivity
+A **Java Swing and MySQL-based Library Management System** that helps manage books, users, and borrowing operations efficiently.  
+It includes secure user authentication, role-based access control (Admin & Student), and a clean GUI built with Swing.
 
-## Requirements
-- Java 8+ (JDK)
-- MySQL Server
-- MySQL Connector/J (add the .jar to your project's classpath)
+---
 
-## Database setup
-1. Create a database and run `db/schema.sql`:
-```
-CREATE DATABASE library_db;
-USE library_db;
-SOURCE schema.sql;
-```
-2. Update DB credentials in `src/utils/DBConnection.java`.
+## 🚀 Features
 
-## How to compile & run (command line)
-1. Place the MySQL Connector/J jar (e.g. mysql-connector-java-8.0.xx.jar) in the `lib/` folder or add to classpath.
-2. Compile:
-```
-javac -cp "lib/*" -d out $(find src -name "*.java")
-```
-3. Run:
-```
-java -cp "out:lib/*" app.Main
-```
+✅ **User Authentication** – Secure login for admin and students  
+✅ **Role-Based Access** – Admin manages books & users; Students can borrow and return  
+✅ **Book Management** – Add, edit, delete, and search books  
+✅ **Borrowing System** – Track issued and returned books  
+✅ **Database Integration** – MySQL via JDBC  
+✅ **Error Handling** – Exception management for smoother user experience  
 
-## Notes
-- This is a minimal educational example. For production use, improve password hashing, input validation, and use connection pooling.
+---
+
+## 🗂️ Project Structure
+
+library_management_system/
+├─ src/
+│ ├─ app/
+│ │ └─ Main.java
+│ ├─ dao/
+│ │ ├─ BookDAO.java
+│ │ ├─ BorrowDAO.java
+│ │ └─ UserDAO.java
+│ ├─ models/
+│ │ ├─ Book.java
+│ │ └─ User.java
+│ ├─ ui/
+│ │ ├─ AdminFrame.java
+│ │ ├─ LoginFrame.java
+│ │ └─ StudentFrame.java
+│ └─ utils/
+│ └─ DBConnection.java
+│
+├─ db/
+│ └─ schema.sql
+│
+├─ lib/
+│ └─ mysql-connector-j-8.0.xx.jar
+│
+├─ README.md
+└─ build_instructions.txt
+
+
+---
+
+## ⚙️ Tech Stack
+
+| Component | Technology |
+|------------|-------------|
+| Language | Java (JDK 8 or above) |
+| GUI | Java Swing |
+| Database | MySQL |
+| Connectivity | JDBC |
+| IDE (Recommended) | Eclipse / IntelliJ IDEA |
+
