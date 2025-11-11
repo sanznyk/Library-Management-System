@@ -1,0 +1,5 @@
+Simple build steps (Unix-like):
+1. mkdir out
+2. javac -cp "lib/*" -d out $(find src -name "*.java")
+3. java -cp "out:lib/*" app.Main
+On Windows adjust classpath separators (use ; instead of :)
